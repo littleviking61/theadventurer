@@ -1,0 +1,59 @@
+// variables
+
+$rem-base: 16px;
+$body-font: "asap", Helvetica, Arial, sans-serif;
+$title-font: "roboto", serif;
+
+// color
+$lightest-grey: #f2f2f2;
+$lighter-grey: lighten(#8c8c8c, 10%);
+$light-grey: lighten(#666666, 5%);
+$grey: #353535;
+$yellow: #ffbc17;
+$red: #f23518;
+$blue: #0252cf;
+$green: #42b04f;
+$progress: #ffbc16;
+
+// categorie
+$categories:
+	(peinture, $blue),
+	(geometrie, $red),
+	(photographie, $green),
+	(multi, $yellow),
+	(sculpture, $yellow);
+
+$colors: () !global;
+$bgColors: () !global;
+$bdColors: () !global;
+
+// element color
+$bg-color: $lightest-grey;
+
+// font size
+$ft-size-smallest: rem-calc(8);
+$ft-size-small: rem-calc(10);
+$ft-size-normal: rem-calc(12);
+$ft-size-medium: rem-calc(14);
+$ft-size-large: rem-calc(16);
+$ft-size-larger: rem-calc(18);
+$ft-size-largest: rem-calc(22);
+$ft-size-big: rem-calc(30);
+$ft-size-hudge: rem-calc(40);
+
+// size
+$one: rem-calc(1);
+$two: $one*2;
+
+// gutter
+$gutter: rem-calc(10);
+$gutter-medium: $gutter*1.5;
+$gutter-large: $gutter*2;
+$gutter-big: $gutter*3;
+$gutter-hudge: $gutter*4;
+$gutter-small: $gutter/2;
+$gutter-mini: $gutter/3;
+
+// 
+$column-width: rem-calc(100);
+$column-gutter: $gutter-large;

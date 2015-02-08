@@ -1,0 +1,197 @@
+// layout.scss
+
+/* GENERAL BODY */
+
+body{
+	@extend %flex-row;
+
+	background-color: $bg-color;
+	font-family: $body-font;
+	font-size: $ft-size-normal;
+}
+
+/* HEADER */
+
+header[role="banner"]{
+	@extend %flex-column-wrap;
+	@include align-items(flex-end);
+
+	font-family: $title-font;	
+	padding: $gutter-big;
+	padding-bottom: 0;
+	margin-bottom: $gutter-medium;
+
+	.banner{
+		@include flex-shrink(0);
+		@include flex(1 0 rem-calc(270));
+		
+		h1{
+			margin: 0;
+		}
+	}
+
+	#logo-circle{
+		@include colors(&, "fill");
+	}
+
+	nav{
+		margin-bottom: $gutter-medium;
+
+		ul{
+			@extend %flex-center-center;
+			min-height: rem-calc(34);
+
+			a{
+				@include display-flex;
+				@include transition(all .3s);
+
+				font-size: $ft-size-medium;
+				text-transform: lowercase;
+				padding-top: $gutter-small;
+				margin: 0 $gutter;
+				border-bottom: solid $two transparent;
+				
+				i:before{
+					margin-right: $gutter-small;
+				}
+			}
+
+			.current-menu-item a, a:hover, a.active{
+				&:not([href="#"]) {
+					border-bottom: solid $two;
+					// @include colors(&, "bd");
+					margin-bottom: rem-calc(8);
+				}
+			}
+		}
+	}
+
+}
+
+/* MAIN */
+
+main{
+	@extend %flex-column;
+	@include flex(1);
+
+	aside.main{
+		padding-top: $gutter-medium;
+		padding-left: $gutter-big;
+		min-width: rem-calc(200);
+	}
+}
+
+.wrap{
+	padding-top: $gutter-medium;
+	padding-right: $gutter-big;
+	@extend %flex-column;
+	@include flex(1);
+	@include flex-wrap(wrap);
+	@include align-content(flex-start);
+	@include align-items(flex-start);
+
+	&.isotop{
+		display: block;
+		opacity: 0;
+	}
+
+	.full{
+		width: 100%;
+	}
+
+	> h2{
+
+		&.title{
+			color: $lighter-grey;
+		}
+		
+		width: 100%;
+		margin-bottom: $gutter-small;
+	}
+
+	> .row{
+		margin-bottom: $gutter-hudge;
+	}
+	
+	> section{
+		@extend %flex-column-wrap;
+		@include align-items(flex-start);
+
+		> header {
+			@extend %flex-column-wrap;
+			width: 100%;
+		}
+	}
+
+	section, %section-gutter{
+		margin-right: $column-gutter;
+		margin-bottom: $column-gutter;
+	}
+
+	.container{
+		padding: $gutter-medium;
+		background-color: white;
+	}
+}
+
+.row{
+	@extend %flex-column-wrap;
+	@include align-items(flex-start);
+
+	> header {
+		@extend %flex-column-wrap;
+		width: 100%;
+	}
+
+	&.stretch{ @include align-items(stretch); }
+	&.end{ @include align-items(flex-end); }
+	&.start{ @include align-items(flex-start); }
+	&.mid{ @include align-items(center); }
+}
+
+/* FOOTER */
+
+footer.main{
+	display: none;
+}
+
+/* flex LAYOUT */
+
+// flex template
+
+%flex-general{
+	.go-right{
+		margin-left: auto;
+	}
+
+	.full{
+		@include flex(1);
+	}
+
+	.unbreak{
+		@include flex-shrink(0);
+	}
+}
+
+%flex-column{
+	@include display-flex;
+}
+
+%flex-row{
+	@include display-flex;
+	@include flex-direction(column);
+}
+
+%flex-column-wrap{
+	@extend %flex-column;
+	@include flex-wrap(wrap);
+
+	@extend %flex-general;
+}
+
+%flex-center-center{
+	@extend %flex-column;
+	@include flex-wrap(wrap);
+	@include align-items(center);
+	@include justify-content(center);
+}

@@ -1,0 +1,114 @@
+// element.scss
+
+/* button*/ 
+
+.button, button{
+	@extend %flex-center-center;
+	@include single-transition(all, .2s);
+
+	padding: $gutter-mini $gutter-small $gutter-mini $gutter;
+	@include colors(&, "bg");
+	color: white;
+
+	&:hover{
+		color: white;
+		@include colors(&, "bg");
+
+		&.right{
+			padding-right: $gutter;
+			// padding-left: $gutter;
+		}
+	}
+
+	&.right{
+		float: right;
+		margin-top: $gutter;
+		margin-right: -($gutter-medium);
+		margin-bottom: -($gutter-medium);
+	}
+
+	i:before{
+		display: block;
+		font-size: 1.6em;
+	}
+
+	i:first-child{
+		margin-right: $gutter-small;
+	}
+	i:last-child{
+		margin-left: $gutter-small;
+	}
+}
+
+/* thumbnail */
+
+%thumbnail, .thumbnail{
+	margin: -$gutter-medium;
+	margin-bottom: $gutter;
+	overflow: hidden;
+	border-bottom: $gutter-mini solid;
+	
+	@include colors(&, "bd");
+
+	img{
+		@include single-transition(all, .4s, ease-out);
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+/* list bloc */
+
+.post-it, %post-it{
+	@extend %flex-row;
+	@extend %section-gutter;
+	@include single-transition(all, .5s);
+	// @include box-shadow(0 0 $gutter transparent);
+	border: $one dotted transparent;
+
+	.thumbnail{
+		margin: -($gutter-medium + $one);
+		margin-bottom: $gutter;
+	}
+
+	&.artiste{
+		//height: grid-calc(2.5);
+	}
+
+	&:hover{
+		@include colors(&, "bg", true);
+
+		.thumbnail img{
+			transform: scale(1.02)
+		}
+
+		h2, h3, h4, h5, p{
+			color: white;
+		}
+		hr{
+			background-color:white;
+		}
+		// @include box-shadow($gutter-small $gutter-small $gutter-small darken($lightest-grey, 10%));
+	}
+
+	h3{
+		font-size: $ft-size-larger;
+	}
+
+	.detail{
+		// @include flex-shrink(0);
+		overflow: hidden;
+
+		.content hr{
+			display: none;
+		}
+	}
+
+	hr:last-child{
+		display: none;
+	}
+}
+
+@import "elements/aside";
+@import "elements/bloc";

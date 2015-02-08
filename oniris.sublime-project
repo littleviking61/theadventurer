@@ -1,0 +1,24 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"SOURCE",
+				".gitignore",
+				"*.sublime-project",
+				"*.txt",
+				"*.md",
+				"*.json"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				".sass-cache",
+				"lang"
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	]
+}

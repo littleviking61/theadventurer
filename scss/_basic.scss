@@ -1,0 +1,126 @@
+// basic
+
+*, *:before, *:after {
+	@include box-sizing;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  min-height: 100%;
+  width: 100%;
+
+  color: $grey;
+}
+
+nav, aside{
+	ul{
+		list-style: none;
+	 	padding-left: 0;
+	}
+}
+
+/* LINK BASIC */
+
+a{
+	text-decoration: none;
+	color: $grey;
+
+	&:hover:not(.button), &.active{
+		@include colors(&);
+	}
+
+}
+
+.current-menu-item a{
+	@extend a.active;
+}
+
+/* paragraphe and title basic */
+
+h1, h2, h3, h4, h5, h6{
+	margin-top: 0;
+	text-rendering: optimizeLegibility;
+	font-family: $title-font;
+	font-weight: lighter;
+	margin-bottom: 0;
+}
+
+h2{
+	@include colors(&);
+	// color: $lighter-grey;
+	font-size: $ft-size-big;
+}
+
+h3{
+	@include colors(&);
+	font-size: $ft-size-largest;
+}
+
+h4{
+	@include colors(&);
+	font-size: $ft-size-larger;
+	margin-bottom: $gutter;
+}
+
+h5{
+	color: $grey;
+	font-weight: 500;
+	font-size: $ft-size-normal;
+}
+
+hr{
+	@include colors(&, "bg");
+	width:100%;
+	border: none;
+	height: $one;
+}
+
+.container{
+	display: block;
+	@extend %basic-color;
+}
+
+%basic-color{
+	color: initial;
+	@include colors((h2,h3,h4), null, ".container");
+	@include colors(hr, "bg", ".container");
+	@include colors(".thumbnail", "bd", ".container");
+}
+
+p{
+	color: lighten($grey, 15%);
+}
+
+.content{
+	width: 100%;
+	line-height: 1.4;
+	
+	hr{
+		width: $gutter;
+		border:none;
+		height: $one;
+	}
+	
+	h4{
+		@include colors(&);
+		font-size: $ft-size-medium;
+	}
+
+	> *:first-child{
+		margin-top: 0;
+	}
+
+	> *:last-child{
+		margin-bottom: 0;
+	}
+}
+
+/* utilities class */
+
+.hide{
+	display: none;
+}

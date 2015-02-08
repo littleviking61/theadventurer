@@ -1,0 +1,73 @@
+// mixin.scss
+
+// Bourbon Mixin for top notch webfont support: https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_font-face.scss
+@mixin font-face-bb($font-family, $file-path, $weight: normal, $style: normal, $svg-name: $font-family ) {
+  @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$svg-name}') format('svg');
+      font-weight: $weight;
+      font-style: $style;
+  }
+}
+
+@mixin flex-grid( $prefix: ".", $class: flex, $total-columns: 12, $percentage:false){
+  @for $i from 0 through $total-columns - 1 {
+    #{$prefix}#{$class}-#{$i}{
+      @include flex-basis( grid-calc($i, $total-columns, $percentage) );
+      width: ( grid-calc($i, $total-columns, $percentage) );
+    }
+  }
+}
+
+@function grid-calc($colNumber, $totalColumns: 0, $percentage : false) {
+  @if $percentage == true { @return percentage(($colNumber / $totalColumns)); }
+  @if $percentage == false { @return ($colNumber * $column-width) + (($colNumber - 1) * $column-gutter) ; }
+}
+
+@mixin colors($element: &, $mode: null, $force: false, $space : " ") {
+  @if $mode == "bg"{
+    // $bgColors: $bgColors, unquote(#{$element}) !global;
+    @include renderColors($element, $force, $space, background-color) { @content };
+  } @else if $mode == "bd"{
+    // $bdColors: $bdColors, unquote(#{$element}) !global;
+    @include renderColors($element, $force, $space, border-color) { @content };
+  } @else if $mode == "fill"{
+    // $bdColors: $bdColors, unquote(#{$element}) !global;
+    @include renderColors($element, $force, $space, fill) { @content };
+  } @else {
+    // $colors: $colors, unquote(#{$element}) !global;
+    @include renderColors($element, $force, $space) { @content };
+  }
+}
+
+@mixin renderColors($elements, $force, $space, $attribut: color) {
+  // #{$attribut}: $yellow;
+
+  @each $element in $elements {
+    @at-root #{$elements} {
+      #{$attribut}: $yellow;
+      @content;
+    }
+
+    @each $categorie, $color in $categories {
+      @if $force == true{
+        @at-root .cat-#{$categorie}#{$element} {
+          #{$attribut}: $color;
+        }
+      } @else if $force == false {
+        @at-root .cat-#{$categorie} #{$element} {
+          #{$attribut}: $color;
+        }
+      } @else {
+        @at-root #{$force}.cat-#{$categorie}#{$space}#{$element} {
+          #{$attribut}: $color;
+        }
+      }
+    }
+  }
+}
+
