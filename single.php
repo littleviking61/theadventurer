@@ -1,29 +1,23 @@
 <?php get_header(); ?>
-	
-	<?php if(is_page() || is_home()) :
-		$class[] = '';
-		if(get_field('isotop', get_the_id())) $class[] = 'isotop';
-	endif ?>
 
-	<div class="wrap<?= join($class, ' ') ?>">
-		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+	<div class="wrap">
+		<?php if ( have_posts() ) :
+		 
+			while ( have_posts() ) : the_post();
+
+				if ( have_rows('contenu') ) :
+					
+					get_template_part( 'loop', 'flex' ); 
+
+				else : 
+					
+					get_template_part( 'content', 'none' );
 				
-				<?php if ( !empty(get_field('liste')) ) : ?>
+				endif;
 
-					<?php get_template_part( 'loop', 'list' ); ?>
+			endwhile;
 
-				<?php else : ?>
-
-					<?php get_template_part( 'loop', 'flex' ); ?>
-
-				<?php endif; ?>
-
-			<?php endwhile; ?>
-			
-		<?php else : ?>
-				<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+		endif; ?>
 	</div>
-
+		
 <?php get_footer(); ?>

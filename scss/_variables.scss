@@ -2,7 +2,7 @@
 
 $rem-base: 16px;
 $body-font: "asap", Helvetica, Arial, sans-serif;
-$title-font: "roboto", serif;
+// $title-font: "roboto", serif;
 
 // color
 $lightest-grey: #f2f2f2;
@@ -11,24 +11,15 @@ $light-grey: lighten(#666666, 5%);
 $grey: #353535;
 $yellow: #ffbc17;
 $red: #f23518;
+$orange: #ea7559;
 $blue: #0252cf;
 $green: #42b04f;
 $progress: #ffbc16;
 
-// categorie
-$categories:
-	(peinture, $blue),
-	(geometrie, $red),
-	(photographie, $green),
-	(multi, $yellow),
-	(sculpture, $yellow);
-
-$colors: () !global;
-$bgColors: () !global;
-$bdColors: () !global;
-
 // element color
-$bg-color: $lightest-grey;
+$bg-color: white;
+$link-color: $grey;
+$link-color-active: $orange;
 
 // font size
 $ft-size-smallest: rem-calc(8);
