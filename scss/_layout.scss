@@ -13,7 +13,7 @@ body{
 header[role="banner"]{
 	position: fixed;
 	width: 100%;
-	padding: $gutter;
+	padding: 0 $gutter;
 
 	@extend %flex-column-center;
 
@@ -51,9 +51,17 @@ header[role="banner"]{
 main{
 }
 
+.container{
+	width: $content-width;
+	margin: $gutter-medium auto;
+	border-left: solid $one $lighter-grey;
+	padding: 0 $gutter;
+}
+
 .wrap{
 	// @include container();
 }
+	
 
 .row{
 	@extend %flex-column-wrap;

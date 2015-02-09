@@ -6,3 +6,28 @@
 }
 
 /* list bloc */
+
+article{
+	.post-meta{
+		@extend %flex-column-center;
+		margin-bottom: 0;
+		& + h2{
+			margin-top: -($gutter-small);
+		}
+	}
+}
+
+
+.skroll-it{
+	min-height: 40vh;
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: cover;
+
+	@extend %flex-center-center;
+	color: white;
+
+	img.skroll-img{
+		display: none;
+	}
+}

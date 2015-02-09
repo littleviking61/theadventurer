@@ -13,6 +13,9 @@ function startup_theme_support() {
 		// add_image_size( 'small', '240', '240', false );
 
 		add_theme_support('menus');
+
+		add_theme_support( 'post-formats', array( 'quote', 'gallery', 'video', 'audio' ) );
+
 		register_nav_menus(array(
 				'primary' => __('Primary Navigation', 'reverie'),
 				'secondary' => __('Secondary Navigation', 'reverie')

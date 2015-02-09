@@ -33,8 +33,8 @@ $(document).ready(function(){
 			if(img !== undefined && img !== "") {
 				$this
 					.css('background-image', 'url('+img+')')
-					.attr('data-bottom-top', 'background-position: 50% 0px; max-height: 300px')
-					.attr('data-top-bottom', 'background-position: 50% -100px; max-height: 100px;');
+					.attr('data-bottom-top', 'background-position: 50% 0px;')
+					.attr('data-top-bottom', 'background-position: 50% -100px;');
 			}
 
 		});

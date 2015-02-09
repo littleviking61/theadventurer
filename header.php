@@ -8,6 +8,7 @@
 
 	<link rel="shortcut icon" type="image/png" href="<?= get_template_directory_uri(); ?>/favicon.png">
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
+	<link href="https://fontastic.s3.amazonaws.com/PBrgFVcvvh7STe9yVCeFQ3/icons.css" rel="stylesheet">
 	<!-- <link href="https://fontastic.s3.amazonaws.com/gRRNm22qUWbaxCi8Cgm6KF/icons.css" rel="stylesheet"> -->
 	<?php wp_head(); ?>
 
@@ -16,8 +17,8 @@
 <body <?php body_class(); ?>>
 
 	<header class="main" role="banner"
-		data-0="height:100px; background-color:rgba(250,250,250,0.3);"
-		data-300="height:60px; background-color:rgba(250,250,250,1);"
+		data-0="background-color:rgba(250,250,250,0.3);"
+		data-300="background-color:rgba(250,250,250,1);"
 	>
 		<!-- Starting the nav -->
 		<div class="banner" 

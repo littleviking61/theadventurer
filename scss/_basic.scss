@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h2{
-	font-size: $ft-size-hudge;
+	font-size: $ft-size-big;
 }
 
 hr{
@@ -55,13 +55,17 @@ hr{
 
 p{
 	font-size: $ft-size-large;
+	// &:first-of-type{ 
+	// 	@extend %dropcap;
+	// }
 }
 
 .content{
-	width: 41.25em;
-	margin: $gutter-medium auto;
-	line-height: 1.5;
-	
+
+	p{
+		line-height: 1.5;
+	}
+
 	hr{
 	}
 	
@@ -78,6 +82,18 @@ p{
 }
 
 /* utilities class */
+
+%dropcap{
+	&:first-letter{
+		font-size: 3.5em;
+		margin-top: -.1em;
+		font-family: 'Georgia', serif;
+		font-style: italic;
+		line-height: .8;
+		float: left;
+		margin: 0 .1em 0 0;
+	}
+}
 
 .hide{
 	display: none;
