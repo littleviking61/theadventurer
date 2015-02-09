@@ -12,9 +12,11 @@ html{
 body{
   min-height: 100%;
   width: 100%;
+	color: $grey;
 }
 
 nav, aside{
+	
 	ul{
 		list-style: none;
 	 	padding-left: 0;
@@ -35,6 +37,13 @@ a{
 /* paragraphe and title basic */
 
 h1, h2, h3, h4, h5, h6{
+	text-transform: uppercase;
+	font-weight: 800;
+	line-height: 1;
+}
+
+h2{
+	font-size: $ft-size-hudge;
 }
 
 hr{
@@ -45,11 +54,13 @@ hr{
 }
 
 p{
+	font-size: $ft-size-large;
 }
 
 .content{
-	width: 100%;
-	line-height: 1.4;
+	width: 41.25em;
+	margin: $gutter-medium auto;
+	line-height: 1.5;
 	
 	hr{
 	}

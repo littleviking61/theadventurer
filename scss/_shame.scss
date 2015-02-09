@@ -1,1 +1,15 @@
 // shame
+
+.skroll-it{
+	min-height: rem-calc(400);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: cover;
+
+	@extend %flex-center-center;
+	color: white;
+
+	img.skroll-img{
+		display: none;
+	}
+}

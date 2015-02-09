@@ -15,20 +15,24 @@
 
 <body <?php body_class(); ?>>
 
-	<header class="main" role="banner">
+	<header class="main" role="banner"
+		data-0="height:100px; background-color:rgba(250,250,250,0.3);"
+		data-300="height:60px; background-color:rgba(250,250,250,1);"
+	>
 		<!-- Starting the nav -->
-		<div class="banner">
-			<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-				<?php //include(locate_template('icon.php')) ?>
-				<?php bloginfo('name'); ?></a>
-			</h1>
+		<div class="banner" 
+			>
+			<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+				<h1><?php bloginfo('name'); ?></h1>
+			</a>
 		</div>
 
-		<?php wp_nav_menu( array( 
-			'container' => 'nav',
-			'container_class' => 'main',
-			'theme_location' => 'primary' )); 
-		?>
+		<nav class="main">
+			<?php wp_nav_menu( array( 
+				'container' => false,
+				'theme_location' => 'primary' )); 
+			?>
+		</nav>
 
 		<!-- End of Top-Bar -->
 	</header>

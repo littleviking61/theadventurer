@@ -8,10 +8,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<header class="skroll-it">
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail( 'full', ['class' => 'skroll-img']);
+		} ?>
 	</header>
-	<div class="entry-content">
+	<div class="content">
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<?php the_content(__('Continue reading...', 'reverie')); ?>
 	</div>
 	<footer>

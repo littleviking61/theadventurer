@@ -1,5 +1,3 @@
-// layout.scss
-
 /* GENERAL BODY */
 
 body{
@@ -13,8 +11,40 @@ body{
 /* HEADER */
 
 header[role="banner"]{
+	position: fixed;
+	width: 100%;
+	padding: $gutter;
 
+	@extend %flex-column-center;
+
+	h1{
+		// color: white;
+		// margin-top: 0;
+	}
+
+	nav{
+		margin-left: auto;
+		ul{
+			@extend %flex-column-center;
+			li{
+
+				a{
+					text-transform: uppercase;
+					font-weight: 700;
+				}
+
+				&:not(:last-child){
+					margin-right: $gutter-small;
+					&:after{
+						margin-left: $gutter-small;
+						content: "/";
+					}
+				}
+			}
+		}
+	}
 }
+
 
 /* MAIN */
 
@@ -22,6 +52,7 @@ main{
 }
 
 .wrap{
+	// @include container();
 }
 
 .row{
@@ -64,6 +95,11 @@ footer.main{
 
 %flex-column{
 	@include display-flex;
+}
+
+%flex-column-center{
+	@include display-flex;
+	@include align-items(center);
 }
 
 %flex-row{

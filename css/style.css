@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700,800);
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -9,7 +10,8 @@ html {
 
 body {
   min-height: 100%;
-  width: 100%; }
+  width: 100%;
+  color: #555555; }
 
 nav ul, aside ul {
   list-style: none;
@@ -17,18 +19,30 @@ nav ul, aside ul {
 
 /* LINK BASIC */
 a {
-  color: #353535;
+  color: #555555;
   text-decoration: none; }
   a:hover:not(.button), a.active {
     color: #ea7559; }
 
 /* paragraphe and title basic */
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1; }
+
+h2 {
+  font-size: 2.5rem; }
+
 .container {
   display: block; }
 
+p {
+  font-size: 1rem; }
+
 .content {
-  width: 100%;
-  line-height: 1.4; }
+  width: 41.25em;
+  margin: 1.875rem auto;
+  line-height: 1.5; }
   .content > *:first-child {
     margin-top: 0; }
   .content > *:last-child {
@@ -39,9 +53,9 @@ a {
   display: none; }
 
 .flex-0 {
-  -webkit-flex-basis: -1.25rem;
-  flex-basis: -1.25rem;
-  width: -1.25rem; }
+  -webkit-flex-basis: -2.5rem;
+  flex-basis: -2.5rem;
+  width: -2.5rem; }
 
 .flex-1 {
   -webkit-flex-basis: 6.25rem;
@@ -49,62 +63,77 @@ a {
   width: 6.25rem; }
 
 .flex-2 {
-  -webkit-flex-basis: 13.75rem;
-  flex-basis: 13.75rem;
-  width: 13.75rem; }
+  -webkit-flex-basis: 15rem;
+  flex-basis: 15rem;
+  width: 15rem; }
 
 .flex-3 {
-  -webkit-flex-basis: 21.25rem;
-  flex-basis: 21.25rem;
-  width: 21.25rem; }
+  -webkit-flex-basis: 23.75rem;
+  flex-basis: 23.75rem;
+  width: 23.75rem; }
 
 .flex-4 {
-  -webkit-flex-basis: 28.75rem;
-  flex-basis: 28.75rem;
-  width: 28.75rem; }
+  -webkit-flex-basis: 32.5rem;
+  flex-basis: 32.5rem;
+  width: 32.5rem; }
 
 .flex-5 {
-  -webkit-flex-basis: 36.25rem;
-  flex-basis: 36.25rem;
-  width: 36.25rem; }
+  -webkit-flex-basis: 41.25rem;
+  flex-basis: 41.25rem;
+  width: 41.25rem; }
 
 .flex-6 {
-  -webkit-flex-basis: 43.75rem;
-  flex-basis: 43.75rem;
-  width: 43.75rem; }
+  -webkit-flex-basis: 50rem;
+  flex-basis: 50rem;
+  width: 50rem; }
 
 .flex-7 {
-  -webkit-flex-basis: 51.25rem;
-  flex-basis: 51.25rem;
-  width: 51.25rem; }
-
-.flex-8 {
   -webkit-flex-basis: 58.75rem;
   flex-basis: 58.75rem;
   width: 58.75rem; }
 
+.flex-8 {
+  -webkit-flex-basis: 67.5rem;
+  flex-basis: 67.5rem;
+  width: 67.5rem; }
+
 .flex-9 {
-  -webkit-flex-basis: 66.25rem;
-  flex-basis: 66.25rem;
-  width: 66.25rem; }
+  -webkit-flex-basis: 76.25rem;
+  flex-basis: 76.25rem;
+  width: 76.25rem; }
 
 .flex-10 {
-  -webkit-flex-basis: 73.75rem;
-  flex-basis: 73.75rem;
-  width: 73.75rem; }
+  -webkit-flex-basis: 85rem;
+  flex-basis: 85rem;
+  width: 85rem; }
 
 .flex-11 {
-  -webkit-flex-basis: 81.25rem;
-  flex-basis: 81.25rem;
-  width: 81.25rem; }
+  -webkit-flex-basis: 93.75rem;
+  flex-basis: 93.75rem;
+  width: 93.75rem; }
 
 /* GENERAL BODY */
 body {
   background-color: white;
-  font-family: "asap", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 0.75rem; }
 
 /* HEADER */
+header[role="banner"] {
+  position: fixed;
+  width: 100%;
+  padding: 1.25rem; }
+  header[role="banner"] nav {
+    margin-left: auto; }
+    header[role="banner"] nav ul li a {
+      text-transform: uppercase;
+      font-weight: 700; }
+    header[role="banner"] nav ul li:not(:last-child) {
+      margin-right: 0.625rem; }
+      header[role="banner"] nav ul li:not(:last-child):after {
+        margin-left: 0.625rem;
+        content: "/"; }
+
 /* MAIN */
 .row {
   -webkit-align-items: flex-start;
@@ -135,9 +164,15 @@ body {
   -webkit-flex-shrink: 0;
   flex-shrink: 0; }
 
-.row, .row > header {
+.row, .row > header, .skroll-it {
   display: -webkit-flex;
   display: flex; }
+
+header[role="banner"], header[role="banner"] nav ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center; }
 
 body {
   display: -webkit-flex;
@@ -149,7 +184,23 @@ body {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap; }
 
+.skroll-it {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center; }
+
 /* button*/
 /* list bloc */
+.skroll-it {
+  min-height: 25rem;
+  background-repeat: no-repeat;
+  background-position: center 100%;
+  background-size: cover;
+  color: white; }
+  .skroll-it img.skroll-img {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */
